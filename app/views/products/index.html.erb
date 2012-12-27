@@ -1,0 +1,29 @@
+<h1>Products#index</h1>
+<p>Cadastro de novos produtos</p>
+
+Código de Barras:<br><input id="barcode" type="text"/>
+<br>
+Nome:<br><input id="name" type="text"/>
+<br>
+Medida:<br><input id="amount" type="text"/>
+<br>
+Tipo de Medida:<br><%= select_tag 'amount_type',options_from_collection_for_select(@amount_types, "id", "name") %>
+<br><br>
+<%= link_to 'Salvar','#',:id=>'save' %>
+
+<br><br>
+
+<table>
+  <th>BarCode</th>
+  <th>Nome</th>
+  <th>Estoque</th>
+  <th></th>
+  <% @products.each do |p|%>
+    <tr>
+      <td><%= p.barcode %></td>
+      <td><%= p.name %></td>
+      <td><%= p.amount %></td>
+      <td><%= p.amount_type.name %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,27 @@
+<h1>Items#entrada</h1>
+<p>Entrada no estoque</p>
+
+<<<<<<< HEAD
+<% if session['fast_mode'] %>
+  Fast-mode: <br><%= check_box_tag 'fast-mode','on',:checked=>true %><br>
+<% else %>
+  Fast-mode: <br><%= check_box_tag 'fast-mode','on' %><br>
+<% end %>
+=======
+>>>>>>> d5fc010fe55c4d6d0407d92f613f0420d127255e
+Código de Barras:<br><input id="barcode" type="text"/>
+<br>
+Multiplicador:<br><input id="multiplier" type="text"/>
+<br><br>
+
+<table>
+  <th>BarCode</th>
+  <th>Nome</th>
+  <th></th>
+  <% @items.each do |i|%>
+    <tr>
+      <td><%= i.product.barcode %></td>
+      <td><%= i.product.name %></td>
+    </tr>
+  <% end %>
+</table>
